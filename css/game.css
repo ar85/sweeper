@@ -5,13 +5,27 @@
 }
 
 .field {
-	border: 1px solid #FF0000;	
+	border: 1px solid #FF0000;
+	background-color: #128812;
+	padding: 0 1px 1px 0;
 }
 
 .box {
-	border: 1px solid #881212;
 	display: block;
 	float: left;
 	height: 14px;
+	margin: 1px 0 0 1px;
 	width: 14px;
+}
+
+.box-closed {
+	background-color: #881212;	
+}
+
+.box-open {
+	background-color: none;
+}
+
+.box-mine {
+	background-color: #00FF00;
 }
