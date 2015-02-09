@@ -2,8 +2,8 @@
 
 var Sweeper = (function(){
 	
-	var boxSize = 16, // size of box in pixels
-		grid, // grid array
+	var boxSize = 16, // size of box in pixels (including border)
+		grid = [], // grid array
 		gridWidth, // grid width in boxes
 		gridHeight, // grid height in boxes
 	    //gameStates = Object.freeze({
@@ -26,15 +26,45 @@ var Sweeper = (function(){
 		
 		return {
 			InitGame: function(inGridWidth, inGridHeight, mineCount){
-				$field = $(".field");
 				
-				$field.width( (inGridWidth*boxSize) + "px");
-				$field.height( (inGridHeight*boxSize) + "px");						
+				$field = $(".field");
+				gridWidth = inGridWidth;
+				gridHeight = inGridHeight;				
+				
+				// create the main grid array
+				for(var c = 0; c < gridWidth; c++)
+				{
+					grid[c] = [];
+					for(var r = 0; r < gridHeight; r++)
+					{
+						var $item = $('<span class="box"></span>');
+							$item.click((function(xPos, yPos, sweeper){
+							
+								return function(){
+									sweeper.onBoxClick(xPos, yPos);	
+								}
+							
+						})(c, r, this)).appendTo($field);
+						
+						grid[c][r] = [$item];
+					}
+				}
+				
+				
+				// set the field width and height
+				$field.width( (gridWidth*boxSize) + "px");
+				$field.height( (gridHeight*boxSize) + "px");						
+			},
+			
+			onBoxClick: function(xPos, yPos) {
+				console.log("x: " + xPos + ", y: " + yPos);	
 			}
+			
+			
 		}
 	
 })();
 
 $(document).ready(function(){
-	Sweeper.InitGame(8, 8, 8);
+	Sweeper.InitGame(16, 16, 8);
 });

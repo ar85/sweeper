@@ -7,3 +7,11 @@
 .field {
 	border: 1px solid #FF0000;	
 }
+
+.box {
+	border: 1px solid #881212;
+	display: block;
+	float: left;
+	height: 14px;
+	width: 14px;
+}
