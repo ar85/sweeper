@@ -518,6 +518,8 @@ var Sweeper = (function(){
 					}
 					emptyRemaining = gridWidth * gridHeight - mineCount;
 									
+									
+					flagsRemaining = mineCount;
 					setFlagsRemainingStr();
 					gameActive = true;
 					startTimer();
@@ -541,7 +543,10 @@ var Sweeper = (function(){
 				gameActive = false;
 				isNewGame = true;
 					
-				stopTimer();
+				resetTimer();
+				
+				flagsRemaining = mineCount;
+				setFlagsRemainingStr();
 				resetGrid();
 				setMines(mineCount);
 			},
