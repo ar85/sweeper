@@ -1,7 +1,53 @@
 /* CSS Document */
 
 .game {
-	
+	background-color: #FF0000;
+	float: left;
+}
+
+.options {
+	display: none;
+}
+
+.options .label {
+	display: inline-block;
+	width: 90px;	
+}
+
+.options input[type="text"] {
+	width: 32px;	
+}
+
+.menu {
+	float: left;
+	margin: 0 24px 0 0;	
+}
+
+.hdr {
+	height: 46px;
+	width: 100%;
+}
+
+.hdr .mines {
+	background-color: #000000;
+	color: #FF0000;
+	float: right;
+	height: 30px;
+	right: 8px;
+	position: relative;
+	top: 8px;
+	width: 70px;
+}
+
+.hdr .time {
+	background-color: #000000;
+	color: #FF0000;
+	float: left;
+	height: 30px;
+	position: relative;
+	left: 8px;
+	top: 8px;
+	width: 70px;
 }
 
 .field {
@@ -22,9 +68,15 @@
 	background-color: #881212;	
 }
 
+.box-flag {
+	background-color: #FF0000;	
+}
+
 .box-open {
 	background-color: none;
 }
+
+
 
 .box-mine {
 	background-color: #00FF00;
