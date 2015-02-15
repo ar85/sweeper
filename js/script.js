@@ -2,7 +2,7 @@
 
 var Sweeper = (function(){
 	
-	var boxSize = 15, // size of box in pixels (including margin)
+	var boxSize = 24, // size of box in pixels (including margin)
 		$field,
 		grid, // grid array
 		gridWidth, // grid width in boxes
@@ -289,14 +289,14 @@ var Sweeper = (function(){
 						gi.boxState = boxStates.CLOSED_FLAGGED
 						flagsRemaining-=1;
 						setFlagsRemainingStr();
-						gi.elem.addClass("box-flag")
+						gi.elem.attr("class", "box box-flag")
 					}
 					else if(gi.boxState== boxStates.CLOSED_FLAGGED){
 						// remove flag
 						gi.boxState = boxStates.CLOSED_BLANK
 						flagsRemaining += 1;
 						setFlagsRemainingStr();
-						gi.elem.removeClass("box-flag")
+						gi.elem.attr("class", "box")
 					}
 				}
 			}
@@ -307,7 +307,7 @@ var Sweeper = (function(){
 			var gi = getGridIndex(xPos, yPos);
 		
 			gi.indexState = indexStates.OPEN;
-			gi.elem.removeClass("box-closed").removeClass("box-flag").addClass("box-open");	
+			gi.elem.attr("class", "box");
 			
 			emptyRemaining -= 1;
 			
@@ -316,7 +316,10 @@ var Sweeper = (function(){
 			};
 			
 			if(gi.floorNum > 0){
-				gi.elem.text(gi.floorNum);	
+				gi.elem.addClass("box-num" + gi.floorNum);
+			}
+			else {
+				gi.elem.addClass("box-open");	
 			}
 		},
 		

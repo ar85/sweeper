@@ -57,27 +57,57 @@
 }
 
 .box {
+	background-image: url(../image/sprites.png);
 	display: block;
 	float: left;
-	height: 14px;
-	margin: 1px 0 0 1px;
-	width: 14px;
+	height: 24px;
+	width: 24px;
 }
 
 .box-closed {
-	background-color: #881212;	
+	background-position: -0px -0px;
 }
 
 .box-flag {
-	background-color: #FF0000;	
+	background-position: -96px -24px;
 }
 
 .box-open {
-	background-color: none;
+	background-position: -120px -0px;
 }
 
-
-
 .box-mine {
-	background-color: #00FF00;
+	background-position: -120px -24px;
+}
+
+.box-num1 {
+	background-position: -24px -0px;
+}
+
+.box-num2 {
+	background-position: -48px -0px;
+}
+
+.box-num3 {
+	background-position: -72px -0px;
+}
+
+.box-num4 {
+	background-position: -96px -0px;
+}
+
+.box-num5 {
+	background-position: -0px -24px;
+}
+
+.box-num6 {
+	background-position: -24px -24px;
+}
+
+.box-num7 {
+	background-position: -48px -24px;
+}
+
+.box-num8 {
+	background-position: -72px -24px;
 }
